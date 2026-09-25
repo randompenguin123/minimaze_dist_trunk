@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>minimaze4</title>
+        
+<script type="module">
+import init, * as bindings from '/minimaze4.js';
+const wasm = await init({ module_or_path: '/minimaze4_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script>
+    <link rel="modulepreload" href="/minimaze4.js" crossorigin="anonymous" integrity="sha384-QtqLlPERvgMvCnQ1Fsfz3QaV8DDDhuHlMHj6Ti5wTTSqppBqxVJWr5SDaqrpGObE"><link rel="preload" href="/minimaze4_bg.wasm" crossorigin="anonymous" integrity="sha384-gVLLFHLSKQ0x6vkdfpRYbBUjqoZ7C64/N7ETDq54OlBS1lq+Ypqx8CRIu1cRM8rL" as="fetch" type="application/wasm"></head>
+    <body></body>
+</html>
