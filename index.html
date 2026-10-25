@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>minimaze4</title>
+        <link rel="icon" href="https://i.imgur.com/3VzZMlM_d.png" />
+        
+<script type="module">
+import init, * as bindings from '/minimaze4.js';
+const wasm = await init({ module_or_path: '/minimaze4_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script>
+    <link rel="modulepreload" href="/minimaze4.js" crossorigin="anonymous" integrity="sha384-seTKNk/issUli0oM7Sf5RT5IBYpr/lWhXL5F9LDuv4MgIPzV8zz4xmy00wvmglp9"><link rel="preload" href="/minimaze4_bg.wasm" crossorigin="anonymous" integrity="sha384-eTdxCuozK0eaVli3GhG78wHRtYBEXLsIculi9EJ+URdNuRgBZJs2QBsMKi26zvBC" as="fetch" type="application/wasm"></head>
+    <body></body>
+</html>
